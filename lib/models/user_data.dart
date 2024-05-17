@@ -42,5 +42,3 @@ class UserDetails {
     return data;
   }
 }
-
-//atuny0    9uQFF1Lh

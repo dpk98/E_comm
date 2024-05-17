@@ -14,13 +14,13 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController(text: 'kminchelle');
+  final TextEditingController _passwordController = TextEditingController(text: '0lelplR');
 
   Future<void> _postData() async {
     try {
       final url =
-          'https://dummyjson.com/auth/login'; // Replace with your API endpoint
+          'https://dummyjson.com/auth/login';
       final response = await http.post(
         Uri.parse(url),
         headers: {'Content-Type': 'application/json'},
@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
       );
 
       if (response.statusCode == 200) {
-        // If server returns an OK response, parse the JSON
+
         final userDetails = UserDetails.fromJson(jsonDecode(response.body));
         Navigator.push(
           context,
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
         );
       } else {
-        // If that response was not OK, throw an error.
+
         throw Exception('Failed to load data');
       }
     } catch (error) {

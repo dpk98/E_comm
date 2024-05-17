@@ -172,7 +172,7 @@ class _ProductListPageState extends State<ProductListPage> {
                 ),
                 Text(
                   products[index].title.toString(),
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12,),
                 ),
                 Row(
                   children: [
